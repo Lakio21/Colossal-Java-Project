@@ -9,6 +9,7 @@ package java_project;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -16,10 +17,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 /**
  * FXML Controller class
@@ -36,13 +42,34 @@ public class Mockup_Java_ProjectController implements Initializable {
     @FXML
     private Button consultButton;
     @FXML
-    private Button editButton;
+    private ToggleButton editButton;
+    
+    @FXML
+    private Tooltip newsTooltip;
+    @FXML
+    private Tooltip consultTooltip;
+    @FXML
+    private Tooltip editTooltip;
+    
+    @FXML
+    private Button addPoi;
+    @FXML
+    private Button addParcours;
+    @FXML
+    private Button addNews;
+    @FXML
+    private Button addLieu;
+    
     @FXML
     private SplitPane newsSplitPanel;
     @FXML
     private Accordion mainAccordion;
     @FXML
     private ImageView mapImage;
+    
+    @FXML
+    private WebView DescriptionView;
+    
     /**
      * Initializes the controller class.
      */
@@ -64,6 +91,14 @@ public class Mockup_Java_ProjectController implements Initializable {
         mapImage.setFitHeight(imageMap.getHeight());
         mapImage.setFitWidth(imageMap.getWidth());
         mapImage.setImage(imageMap);
+        
+        
+        
+        WebEngine webEngine = DescriptionView.getEngine();
+        webEngine.loadContent("<h1><strong>TestHtml</strong></h1>");
+        
+        
+        
         //mapImage.setTranslateX(-100);
         //mapImage.setTranslateY(-200);
         
@@ -154,7 +189,18 @@ public class Mockup_Java_ProjectController implements Initializable {
         editButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("That was easy, wasn't it?");
+                if(editButton.isSelected()) {
+                    addPoi.setDisable(false);
+                    addParcours.setDisable(false);
+                    addNews.setDisable(false);
+                    addLieu.setDisable(false);
+                }
+                else {
+                    addPoi.setDisable(true);
+                    addParcours.setDisable(true);
+                    addNews.setDisable(true);
+                    addLieu.setDisable(true);
+                }
             }
         });
     }    
