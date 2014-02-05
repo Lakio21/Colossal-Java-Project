@@ -2,54 +2,75 @@
 
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="867.0" prefWidth="1243.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="java_project.Mockup_Java_ProjectController">
-<children><TabPane layoutX="-1.0" prefHeight="856.0" prefWidth="1243.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
-  <tabs>
-    <Tab text="Mode Consultation">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-<children><SplitPane dividerPositions="0.23448831587429492" focusTraversable="true" layoutX="9.0" layoutY="1.0" prefHeight="811.0" prefWidth="1233.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
+<children><MenuBar maxHeight="25.0" prefHeight="25.0" prefWidth="1243.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
+  <menus>
+    <Menu mnemonicParsing="false" text="File">
+      <items>
+        <MenuItem mnemonicParsing="false" text="Close" />
+      </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Edit">
+      <items>
+        <MenuItem mnemonicParsing="false" text="Delete" />
+      </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Help">
+      <items>
+        <MenuItem mnemonicParsing="false" text="About" />
+      </items>
+    </Menu>
+  </menus>
+</MenuBar><ToolBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="586.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0" xmlns:fx="http://javafx.com/fxml">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="732.0" prefWidth="243.0">
-<children><Accordion layoutX="14.0" layoutY="37.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
+    <Button fx:id="newsButton" mnemonicParsing="false" text="News">
+<tooltip><Tooltip text="Afficher les news du MiniSig" />
+</tooltip></Button><Button fx:id="consultButton" mnemonicParsing="false" text="Consultation">
+<tooltip><Tooltip text="Mode de Consultation" />
+</tooltip></Button><Button fx:id="editButton" mnemonicParsing="false" text="Edition">
+<tooltip><Tooltip text="Mode d'Edition" />
+</tooltip></Button>
+  </items>
+</ToolBar><AnchorPane layoutX="252.0" layoutY="254.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="77.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+<SplitPane dividerPositions="0.3126510878323932" focusTraversable="true" layoutX="9.0" layoutY="1.0" prefHeight="811.0" prefWidth="1233.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<items>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="732.0" prefWidth="243.0">
+<children><SplitPane fx:id="newsSplitPanel" dividerPositions="0.5" focusTraversable="true" layoutX="220.0" layoutY="100.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+<children><TitledPane animated="false" text="News" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+  </content>
+</TitledPane>
+</children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+<children><ScrollPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+  </content>
+</ScrollPane>
+</children></AnchorPane>
+  </items>
+</SplitPane><Accordion fx:id="mainAccordion" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
   <panes>
-    <TitledPane animated="false" text="Recherche">
+    <TitledPane animated="false" text="P.O.I">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-<children><SplitPane dividerPositions="0.6515580736543909" focusTraversable="true" layoutX="6.0" orientation="VERTICAL" prefHeight="806.0" prefWidth="279.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<children><SplitPane dividerPositions="0.21076233183856502" focusTraversable="true" layoutX="49.0" layoutY="71.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-<children><TextField layoutX="36.0" layoutY="23.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><TabPane layoutX="14.0" layoutY="190.0" prefHeight="378.0" prefWidth="259.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
-  <tabs>
-    <Tab text="Untitled Tab 1">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-<children><RadioButton layoutX="56.0" layoutY="180.5" mnemonicParsing="false" text="Plan" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><RadioButton layoutX="44.0" layoutY="132.5" mnemonicParsing="false" text="Parcours" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><RadioButton layoutX="67.5" layoutY="83.5" mnemonicParsing="false" text="Lieu" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><RadioButton layoutX="80.0" layoutY="36.5" mnemonicParsing="false" text="POI" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
-</children></AnchorPane>
-      </content>
-    </Tab>
-    <Tab text="Untitled Tab 2">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-      </content>
-    </Tab><Tab text="Untitled Tab">
-  <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-  </content>
-</Tab><Tab text="Untitled Tab">
-  <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-  </content>
-</Tab>
-  </tabs>
-</TabPane>
+<children><TextField layoutX="62.9326171875" layoutY="21.5" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" /><RadioButton layoutX="82.304931640625" layoutY="67.5" mnemonicParsing="false" text="Par nom" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="56.0" /><RadioButton layoutX="82.60986328125" layoutY="108.5" mnemonicParsing="false" text="Par description" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="92.0" />
 </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-<children><ScrollPane layoutX="55.0" layoutY="40.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
+<children><Button layoutX="113.234375" layoutY="517.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="356.0" text="Ajouter un P.O.I" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" /><ScrollPane layoutX="68.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
   </content>
@@ -60,34 +81,122 @@
 </children></AnchorPane>
       </content>
     </TitledPane>
-    <TitledPane animated="false" text="Liste">
+    <TitledPane animated="false" text="Parcours">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+<children><SplitPane dividerPositions="0.21823617339312407" focusTraversable="true" layoutX="49.0" layoutY="71.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<items>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+<children>
+<TextField layoutX="62.9326171875" layoutY="21.5" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+<RadioButton layoutX="82.304931640625" layoutY="67.5" mnemonicParsing="false" text="Par nom" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="56.0" />
+<RadioButton layoutX="82.60986328125" layoutY="108.5" mnemonicParsing="false" text="Par description" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="92.0" />
+</children>
+</AnchorPane>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+<children>
+<Button layoutX="113.234375" layoutY="517.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="356.0" text="Ajouter un Parcours" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+<ScrollPane layoutX="68.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<content>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+</content>
+</ScrollPane>
+</children>
+</AnchorPane>
+</items>
+</SplitPane>
+</children></AnchorPane>
       </content>
-    </TitledPane>
-    <TitledPane animated="false" text="Historique">
+    </TitledPane><TitledPane animated="false" text="News" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<content>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+<children><SplitPane dividerPositions="0.21823617339312407" focusTraversable="true" layoutX="49.0" layoutY="71.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<items>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+<children>
+<TextField layoutX="62.9326171875" layoutY="21.5" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+<RadioButton layoutX="82.304931640625" layoutY="67.5" mnemonicParsing="false" text="Par nom" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="56.0" />
+<RadioButton layoutX="82.60986328125" layoutY="108.5" mnemonicParsing="false" text="Par description" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="92.0" />
+</children>
+</AnchorPane>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+<children>
+<Button layoutX="113.234375" layoutY="517.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="356.0" text="Ajouter une News" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+<ScrollPane layoutX="68.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<content>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+</content>
+</ScrollPane>
+</children>
+</AnchorPane>
+</items>
+</SplitPane>
+</children></AnchorPane>
+</content>
+</TitledPane>
+    <TitledPane animated="false" text="Lieu">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+<children><SplitPane dividerPositions="0.21823617339312407" focusTraversable="true" layoutX="49.0" layoutY="71.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<items>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+<children>
+<TextField layoutX="62.9326171875" layoutY="21.5" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+<RadioButton layoutX="82.304931640625" layoutY="67.5" mnemonicParsing="false" text="Par nom" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="56.0" />
+<RadioButton layoutX="82.60986328125" layoutY="108.5" mnemonicParsing="false" text="Par description" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="92.0" />
+</children>
+</AnchorPane>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+<children>
+<Button layoutX="113.234375" layoutY="517.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="356.0" text="Ajouter un Lieu" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+<ScrollPane layoutX="68.0" layoutY="59.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<content>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+</content>
+</ScrollPane>
+</children>
+</AnchorPane>
+</items>
+</SplitPane>
+</children></AnchorPane>
       </content>
     </TitledPane>
   </panes>
 </Accordion>
+</children>
+</AnchorPane>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="664.0">
+<children><ToolBar layoutY="3.0" prefHeight="45.0" prefWidth="542.0" style="-fx-background-color: LightGray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
+  <items><ComboBox layoutX="135.0" layoutY="171.5" prefWidth="230.0" xmlns:fx="http://javafx.com/fxml" /><Button layoutX="394.0" layoutY="10.0" mnemonicParsing="false" style="fx-font-weight: bold;" text="&lt;" />
+    <Button mnemonicParsing="false" text="&gt;" /><Separator orientation="VERTICAL" /><Label text="&gt; France" /><Label text="&gt; Toulouse" /><Label text="&gt; Cesi.Exia" />
+  </items>
+</ToolBar><SplitPane dividerPositions="0.8347107438016529" focusTraversable="true" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0" xmlns:fx="http://javafx.com/fxml">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+<children><ImageView fx:id="mapImage" fitHeight="195.0" fitWidth="500.0" layoutX="251.5" layoutY="119.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<viewport>
+<Rectangle2D />
+</viewport>
+<cursor>
+<Cursor fx:constant="OPEN_HAND" />
+</cursor></ImageView><Polygon fill="DODGERBLUE" layoutX="239.0" layoutY="318.0" rotate="180.0" scaleX="1.27" stroke="BLACK" strokeType="INSIDE" xmlns:fx="http://javafx.com/fxml">
+  <points>
+    <Double fx:value="-50.0" />
+    <Double fx:value="40.0" />
+    <Double fx:value="50.0" />
+    <Double fx:value="40.0" />
+    <Double fx:value="0.0" />
+    <Double fx:value="-60.0" />
+  </points>
+</Polygon>
 </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="664.0">
-<children><Pane layoutX="238.0" layoutY="159.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" /><Pane layoutX="23.0" prefHeight="50.0" prefWidth="990.0" style="-fx-background-color: Gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-<children><Rectangle arcHeight="5.0" arcWidth="5.0" fill="#C8C8C8" height="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" /><Button id="001" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="55.0" style="-fx-background-image: ‪C:\Users\Pierre\Desktop\left_arrow.png;" /><Button contentDisplay="CENTER" layoutX="55.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="55.0" text="&gt;" />
-</children></Pane>
-</children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
   </items>
 </SplitPane>
-</children></AnchorPane>
-      </content>
-    </Tab>
-    <Tab text="Mode Edition">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-      </content>
-    </Tab>
-  </tabs>
-</TabPane>
+</children>
+</AnchorPane>
+</items>
+</SplitPane>
+</children>
+</AnchorPane><Pane prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: LightGray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
 </children></AnchorPane>
