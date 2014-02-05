@@ -7,13 +7,20 @@
 package java_project;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.channels.AsynchronousFileChannel;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
@@ -26,6 +33,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -70,6 +78,8 @@ public class Mockup_Java_ProjectController implements Initializable {
     @FXML
     private WebView DescriptionView;
     
+    @FXML
+    private AnchorPane fenetreAddPOI;
     /**
      * Initializes the controller class.
      */
@@ -200,6 +210,26 @@ public class Mockup_Java_ProjectController implements Initializable {
                     addParcours.setDisable(true);
                     addNews.setDisable(true);
                     addLieu.setDisable(true);
+                }
+            }
+        });
+        
+        addPoi.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("Mockup_Add.fxml"));
+                    
+                    Stage stage = new Stage();
+                    
+                    Scene scene = new Scene(root);
+                    
+                    stage.setScene(scene);
+                    
+                    stage.show();
+                    
+                } catch (IOException ex) {
+                    Logger.getLogger(Mockup_Java_ProjectController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
