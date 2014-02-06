@@ -107,13 +107,10 @@ public class Mockup_Java_ProjectController implements Initializable {
         WebEngine webEngine = DescriptionView.getEngine();
         webEngine.loadContent("<h1><strong>TestHtml</strong></h1>");
         
-        
-        
         //mapImage.setTranslateX(-100);
         //mapImage.setTranslateY(-200);
         
-        
-        
+
         /*mapImage.setOnDragDetected(new EventHandler<MouseEvent>() {
            @Override
            public void handle(MouseEvent event) {
