@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 06 Février 2014 à 14:08
+-- Généré le: Jeu 06 Février 2014 à 21:03
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -34,10 +34,9 @@ CREATE TABLE IF NOT EXISTS `descriptioncomplete` (
   `idPoint_Point` int(11) DEFAULT NULL,
   `idParcour_Parcours` int(11) DEFAULT NULL,
   `idNews_News` int(11) DEFAULT NULL,
+  `idImage_Image` int(11) DEFAULT NULL,
   PRIMARY KEY (`idDescription`),
-  KEY `FK_DescriptionComplete_idPoint_Point` (`idPoint_Point`),
-  KEY `FK_DescriptionComplete_idParcour_Parcours` (`idParcour_Parcours`),
-  KEY `FK_DescriptionComplete_idNews_News` (`idNews_News`)
+  KEY `FK_DescriptionComplete_idImage_Image` (`idImage_Image`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -77,6 +76,18 @@ CREATE TABLE IF NOT EXISTS `historiquepoint` (
   PRIMARY KEY (`idPoint_Point`,`idHistorique_Historique`),
   KEY `FK_HistoriquePoint_idHistorique_Historique` (`idHistorique_Historique`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `image`
+--
+
+CREATE TABLE IF NOT EXISTS `image` (
+  `idImage` int(11) NOT NULL AUTO_INCREMENT,
+  `adresseImage` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idImage`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -177,63 +188,61 @@ CREATE TABLE IF NOT EXISTS `referencepoint` (
 -- Contraintes pour la table `descriptioncomplete`
 --
 ALTER TABLE `descriptioncomplete`
-  ADD CONSTRAINT `FK_DescriptionComplete_idNews_News` FOREIGN KEY (`idNews_News`) REFERENCES `news` (`idNews`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_DescriptionComplete_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_DescriptionComplete_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_DescriptionComplete_idImage_Image` FOREIGN KEY (`idImage_Image`) REFERENCES `image` (`idImage`);
 
 --
 -- Contraintes pour la table `historiqueparcours`
 --
 ALTER TABLE `historiqueparcours`
-  ADD CONSTRAINT `FK_HistoriqueParcours_idHistorique_Historique` FOREIGN KEY (`idHistorique_Historique`) REFERENCES `historique` (`idHistorique`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_HistoriqueParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_HistoriqueParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`),
+  ADD CONSTRAINT `FK_HistoriqueParcours_idHistorique_Historique` FOREIGN KEY (`idHistorique_Historique`) REFERENCES `historique` (`idHistorique`);
 
 --
 -- Contraintes pour la table `historiquepoint`
 --
 ALTER TABLE `historiquepoint`
-  ADD CONSTRAINT `FK_HistoriquePoint_idHistorique_Historique` FOREIGN KEY (`idHistorique_Historique`) REFERENCES `historique` (`idHistorique`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_HistoriquePoint_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_HistoriquePoint_idHistorique_Historique` FOREIGN KEY (`idHistorique_Historique`) REFERENCES `historique` (`idHistorique`),
+  ADD CONSTRAINT `FK_HistoriquePoint_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`);
 
 --
 -- Contraintes pour la table `listepointparcours`
 --
 ALTER TABLE `listepointparcours`
-  ADD CONSTRAINT `FK_ListePointParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`),
-  ADD CONSTRAINT `FK_ListePointParcours_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`);
+  ADD CONSTRAINT `FK_ListePointParcours_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`),
+  ADD CONSTRAINT `FK_ListePointParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`);
 
 --
 -- Contraintes pour la table `news`
 --
 ALTER TABLE `news`
-  ADD CONSTRAINT `FK_News_idDescription_DescriptionComplete` FOREIGN KEY (`idDescription_DescriptionComplete`) REFERENCES `descriptioncomplete` (`idDescription`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_News_idDescription_DescriptionComplete` FOREIGN KEY (`idDescription_DescriptionComplete`) REFERENCES `descriptioncomplete` (`idDescription`);
 
 --
 -- Contraintes pour la table `parcours`
 --
 ALTER TABLE `parcours`
-  ADD CONSTRAINT `FK_Parcours_idDescription_DescriptionComplete` FOREIGN KEY (`idDescription_DescriptionComplete`) REFERENCES `descriptioncomplete` (`idDescription`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_Parcours_idDescription_DescriptionComplete` FOREIGN KEY (`idDescription_DescriptionComplete`) REFERENCES `descriptioncomplete` (`idDescription`);
 
 --
 -- Contraintes pour la table `point`
 --
 ALTER TABLE `point`
-  ADD CONSTRAINT `FK_Point_idDescription_DescriptionComplete` FOREIGN KEY (`idDescription_DescriptionComplete`) REFERENCES `descriptioncomplete` (`idDescription`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_Point_idPoint1` FOREIGN KEY (`idPoint1`) REFERENCES `point` (`idPoint`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_Point_idPoint1` FOREIGN KEY (`idPoint1`) REFERENCES `point` (`idPoint`),
+  ADD CONSTRAINT `FK_Point_idDescription_DescriptionComplete` FOREIGN KEY (`idDescription_DescriptionComplete`) REFERENCES `descriptioncomplete` (`idDescription`);
 
 --
 -- Contraintes pour la table `referenceparcours`
 --
 ALTER TABLE `referenceparcours`
-  ADD CONSTRAINT `FK_referenceParcours_idNews_News` FOREIGN KEY (`idNews_News`) REFERENCES `news` (`idNews`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_referenceParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_referenceParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`),
+  ADD CONSTRAINT `FK_referenceParcours_idNews_News` FOREIGN KEY (`idNews_News`) REFERENCES `news` (`idNews`);
 
 --
 -- Contraintes pour la table `referencepoint`
 --
 ALTER TABLE `referencepoint`
-  ADD CONSTRAINT `FK_ReferencePoint_idNews_News` FOREIGN KEY (`idNews_News`) REFERENCES `news` (`idNews`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_ReferencePoint_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`) ON DELETE CASCADE;
+  ADD CONSTRAINT `FK_ReferencePoint_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`),
+  ADD CONSTRAINT `FK_ReferencePoint_idNews_News` FOREIGN KEY (`idNews_News`) REFERENCES `news` (`idNews`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
