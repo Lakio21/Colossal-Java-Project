@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 
 /**
