@@ -7,14 +7,21 @@
 package java_project;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.fxml.JavaFXBuilderFactory;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -33,6 +40,8 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Shape;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javax.swing.event.ChangeListener;
 
 /**
@@ -42,6 +51,11 @@ import javax.swing.event.ChangeListener;
  */
 public class Mockup_Java_ProjectController implements Initializable {
     private double a, b;
+    
+    private PoiManagerViewController poiManager = new PoiManagerViewController();
+    private ParcoursManagerViewController parcoursManager = new ParcoursManagerViewController();
+    
+    private Stage fenetre = new Stage();
     
     @FXML
     private TextField poiTextfield;
@@ -289,6 +303,85 @@ public class Mockup_Java_ProjectController implements Initializable {
                     addParcours.setDisable(true);
                     addNews.setDisable(true);
                     addLieu.setDisable(true);
+                }
+            }
+        });
+        
+        /*
+        ************************************************************************************
+        * COMPORTEMENT DE CE BOUTON A CHANGER.
+        *
+        * ACTUELLEMENT : CLIC SUR LE BOUTON ET CHANGEMENT DU CURSEUR
+        * PUIS OUVERTURE DE LE FENETRE UNE FOIS
+        * QUE L'ON CLIQUE SUR LA MAP ----> A FAIRE 
+        ************************************************************************************/
+        addPoi.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    
+                    FXMLLoader load = new FXMLLoader();
+                    
+                    URL location = getClass().getResource("PoiManagerView.fxml");
+                    
+                    load.setLocation(location);
+                    load.setBuilderFactory(new JavaFXBuilderFactory());
+                    
+                    Parent root = (Parent) load.load(location.openStream());
+                    
+                    poiManager = load.getController();
+                    poiManager.setIdPoi(1);
+                    
+                    Scene scene = new Scene(root);
+                    
+                    fenetre.setScene(scene);
+                    fenetre.show();
+                    
+                } catch (IOException ex) {
+                    Logger.getLogger(Mockup_Java_ProjectController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        
+        fenetre.setOnCloseRequest(new EventHandler<WindowEvent>() {
+
+            @Override
+            public void handle(WindowEvent t) {
+                try{
+                    System.out.println(poiManager.getIdPoi());
+                }
+                catch(Exception e) {
+                    
+                }
+            }
+        });
+        
+        addParcours.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    
+                    FXMLLoader load = new FXMLLoader();
+                    
+                    URL location = getClass().getResource("ParcoursManagerView.fxml");
+                    
+                    load.setLocation(location);
+                    load.setBuilderFactory(new JavaFXBuilderFactory());
+                    
+                    Parent root = (Parent) load.load(location.openStream());
+                    
+                    parcoursManager = load.getController();
+                    
+                    
+                    Scene scene = new Scene(root);
+                    
+                    fenetre.setScene(scene);
+                    fenetre.show();
+                    
+                } catch (IOException ex) {
+                    Logger.getLogger(Mockup_Java_ProjectController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane id="AnchorPane" fx:id="fenetreAddPOI" minHeight="476.0" prefHeight="507.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="java_project.PoiManagerViewController">
+  <children>
+    <Pane layoutX="2.0" layoutY="0.0" prefHeight="507.0" prefWidth="600.0">
+      <children>
+        <Label layoutX="14.0" layoutY="76.0" prefHeight="17.9609375" prefWidth="113.0" text="Libellé du point :" />
+        <Label layoutX="15.0" layoutY="121.0" prefHeight="17.9609375" prefWidth="113.0" text="Coordonée y :" />
+        <Label layoutX="15.0" layoutY="99.0" prefHeight="17.9609375" prefWidth="113.0" text="Coordonée x :" />
+        <Label layoutX="14.0" layoutY="143.0" prefHeight="17.9609375" prefWidth="113.0001220703125" text="Chemin vers l'image :" />
+        <TextField id="tbLibellePOI" fx:id="tbLibellePoi" layoutX="132.0" layoutY="74.0" prefWidth="229.0" />
+        <TextField id="tbCoorXPOI" fx:id="tbCoorXPoi" layoutX="132.0" layoutY="97.0" prefWidth="53.00006103515625" />
+        <TextField id="tbCoorYPOI" fx:id="tbCoorYPoi" layoutX="132.0" layoutY="119.0" prefWidth="54.00007792968245" />
+        <TextField id="tbAdrImagePOI" fx:id="tbAdrImagePoi" layoutX="132.0" layoutY="141.0" prefWidth="229.0" />
+        <Label id="labelViewMode" fx:id="labelViewModePoi" layoutX="231.0" layoutY="19.0" prefWidth="141.0" text="Ajout d'un P.O.I" textAlignment="RIGHT" underline="true" wrapText="false">
+          <font>
+            <Font name="Arial" size="19.0" />
+          </font>
+        </Label>
+        <Label layoutX="14.0" layoutY="182.0" prefHeight="17.9609375" prefWidth="113.0" text="Description du POI :" />
+        <TextArea id="taDescrpitionPOI" fx:id="taDescrpitionPoi" layoutX="131.0" layoutY="182.0" prefHeight="101.0" prefWidth="455.0" wrapText="true" />
+        <Button id="btnAddPOI" fx:id="btnValiderPoi" layoutX="498.0" layoutY="475.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="88.0" text="Valider" />
+        <Label layoutX="15.0" layoutY="391.0" prefHeight="17.9608154296875" prefWidth="113.0001220703125" text="Lien hypertexte 1 :" />
+        <Label layoutX="15.0" layoutY="436.0" prefHeight="17.9609375" prefWidth="113.0" text="Lien hypertexte 3 :" />
+        <Label layoutX="15.0" layoutY="414.0" prefHeight="17.9609375" prefWidth="113.0" text="Lien hypertexte 2 :" />
+        <TextField id="tbLibellePOI" fx:id="tbLienHpPoi1" layoutX="131.0" layoutY="388.0" prefWidth="455.0" />
+        <TextField id="tbCoorXPOI" fx:id="tbLienHpPoi2" layoutX="131.0" layoutY="411.0" prefWidth="455.0" />
+        <TextField id="tbCoorYPOI" fx:id="tbLienHpPoi3" layoutX="131.0" layoutY="434.0" prefWidth="455.0" />
+        <Label layoutX="15.0" layoutY="297.0" prefHeight="17.9608154296875" prefWidth="113.0001220703125" text="Lien image 1 :" />
+        <Label layoutX="15.0" layoutY="342.0" prefHeight="17.9609375" prefWidth="113.0" text="Lien image 3 :" />
+        <Label layoutX="15.0" layoutY="320.0" prefHeight="17.9609375" prefWidth="113.0" text="Lien image 2 :" />
+        <TextField id="tbLibellePOI" fx:id="tbLienPoi1" layoutX="131.0" layoutY="295.0" prefWidth="455.0" />
+        <TextField id="tbCoorXPOI" fx:id="tbLienPoi2" layoutX="131.0" layoutY="318.0" prefWidth="455.0" />
+        <TextField id="tbCoorYPOI" fx:id="tbLienPoi3" layoutX="131.0" layoutY="340.0" prefWidth="455.0" />
+        <Button id="btnAddPOI" fx:id="btnSupprimerPOI" disable="true" layoutX="395.0" layoutY="475.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="88.0" text="Supprimer" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>
