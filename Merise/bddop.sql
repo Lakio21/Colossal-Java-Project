@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 06 Février 2014 à 21:03
+-- Généré le: Sam 08 Février 2014 à 13:54
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.12
 
@@ -34,10 +34,23 @@ CREATE TABLE IF NOT EXISTS `descriptioncomplete` (
   `idPoint_Point` int(11) DEFAULT NULL,
   `idParcour_Parcours` int(11) DEFAULT NULL,
   `idNews_News` int(11) DEFAULT NULL,
-  `idImage_Image` int(11) DEFAULT NULL,
   PRIMARY KEY (`idDescription`),
-  KEY `FK_DescriptionComplete_idImage_Image` (`idImage_Image`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  KEY `FK_DescriptionComplete_idPoint_Point` (`idPoint_Point`),
+  KEY `FK_DescriptionComplete_idParcour_Parcours` (`idParcour_Parcours`),
+  KEY `FK_DescriptionComplete_idNews_News` (`idNews_News`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Contenu de la table `descriptioncomplete`
+--
+
+INSERT INTO `descriptioncomplete` (`idDescription`, `htmlDescription`, `idPoint_Point`, `idParcour_Parcours`, `idNews_News`) VALUES
+(1, '<p>Test voir si sa marche ou pas</p>', 2, NULL, NULL),
+(2, '<p>Encore un test mais là c''est pour un parcours</p>', NULL, 1, NULL),
+(3, '<p>Rencore un test mais pour un pts cette fois ...</p>', 3, NULL, NULL),
+(4, '<p>Encore et toujours un test pour un point ...</p>', 4, NULL, NULL),
+(5, '<p>News de test, on peut vraiment écrire de tout et n''importe quoi dans ce logiciel ...</p>', NULL, 1, NULL),
+(6, '<p>Encore et toujours et toujours et toujours un test pour un point ...</p>', 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -86,8 +99,22 @@ CREATE TABLE IF NOT EXISTS `historiquepoint` (
 CREATE TABLE IF NOT EXISTS `image` (
   `idImage` int(11) NOT NULL AUTO_INCREMENT,
   `adresseImage` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`idImage`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `idDescription_DescriptionComplete` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idImage`),
+  KEY `FK_Image_idDescription_DescriptionComplete` (`idDescription_DescriptionComplete`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Contenu de la table `image`
+--
+
+INSERT INTO `image` (`idImage`, `adresseImage`, `idDescription_DescriptionComplete`) VALUES
+(1, '/java_project/jpg/Logo Fairy Tail.png', 1),
+(2, '/java_project/jpg/logo_ffxiv.jpg', 1),
+(3, '/java_project/jpg/Logo Fairy Tail.png', 3),
+(4, '/java_project/jpg/logo_ffxiv.jpg', 3),
+(5, '/java_project/jpg/Logo Fairy Tail.png', 4),
+(6, '/java_project/jpg/logo_ffxiv.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -103,6 +130,16 @@ CREATE TABLE IF NOT EXISTS `listepointparcours` (
   KEY `FK_ListePointParcours_idPoint_Point` (`idPoint_Point`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `listepointparcours`
+--
+
+INSERT INTO `listepointparcours` (`numeroPOI`, `idParcour_Parcours`, `idPoint_Point`) VALUES
+(NULL, 1, 3),
+(NULL, 1, 4),
+(NULL, 2, 4),
+(NULL, 2, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -113,9 +150,15 @@ CREATE TABLE IF NOT EXISTS `news` (
   `idNews` int(11) NOT NULL AUTO_INCREMENT,
   `libelleNews` varchar(255) DEFAULT NULL,
   `idDescription_DescriptionComplete` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idNews`),
-  KEY `FK_News_idDescription_DescriptionComplete` (`idDescription_DescriptionComplete`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`idNews`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `news`
+--
+
+INSERT INTO `news` (`idNews`, `libelleNews`, `idDescription_DescriptionComplete`) VALUES
+(1, 'News de test', 5);
 
 -- --------------------------------------------------------
 
@@ -128,9 +171,16 @@ CREATE TABLE IF NOT EXISTS `parcours` (
   `libelleParcour` varchar(255) DEFAULT NULL,
   `theme` varchar(25255) DEFAULT NULL,
   `idDescription_DescriptionComplete` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idParcour`),
-  KEY `FK_Parcours_idDescription_DescriptionComplete` (`idDescription_DescriptionComplete`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`idParcour`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `parcours`
+--
+
+INSERT INTO `parcours` (`idParcour`, `libelleParcour`, `theme`, `idDescription_DescriptionComplete`) VALUES
+(1, 'parcourTest', 'test', 2),
+(2, 'ParcoursTest2', 'Test2', 2);
 
 -- --------------------------------------------------------
 
@@ -150,9 +200,19 @@ CREATE TABLE IF NOT EXISTS `point` (
   `idDescription_DescriptionComplete` int(11) DEFAULT NULL,
   `idPoint1` int(11) DEFAULT NULL,
   PRIMARY KEY (`idPoint`),
-  KEY `FK_Point_idDescription_DescriptionComplete` (`idDescription_DescriptionComplete`),
   KEY `FK_Point_idPoint1` (`idPoint1`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Contenu de la table `point`
+--
+
+INSERT INTO `point` (`idPoint`, `libellePoint`, `xPoint`, `yPoint`, `zMinPoint`, `zMaxPoint`, `adresseImage`, `isLieu`, `idDescription_DescriptionComplete`, `idPoint1`) VALUES
+(1, 'Origine', 0, 0, 0, 10, NULL, 1, NULL, NULL),
+(2, 'Test1', 0, 0, 0, 10, '/jave_project/jpg/test_map.jpg', 1, NULL, 1),
+(3, 'ptParcour1', 120, 50, 0, 10, NULL, 0, 3, 2),
+(4, 'ptParcours2', 15, 301, 0, 10, NULL, 0, 4, 2),
+(5, 'ptParcours3', 598, 354, 0, 10, NULL, 0, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -188,14 +248,16 @@ CREATE TABLE IF NOT EXISTS `referencepoint` (
 -- Contraintes pour la table `descriptioncomplete`
 --
 ALTER TABLE `descriptioncomplete`
-  ADD CONSTRAINT `FK_DescriptionComplete_idImage_Image` FOREIGN KEY (`idImage_Image`) REFERENCES `image` (`idImage`);
+  ADD CONSTRAINT `FK_DescriptionComplete_idNews_News` FOREIGN KEY (`idNews_News`) REFERENCES `news` (`idNews`),
+  ADD CONSTRAINT `FK_DescriptionComplete_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`),
+  ADD CONSTRAINT `FK_DescriptionComplete_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`);
 
 --
 -- Contraintes pour la table `historiqueparcours`
 --
 ALTER TABLE `historiqueparcours`
-  ADD CONSTRAINT `FK_HistoriqueParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`),
-  ADD CONSTRAINT `FK_HistoriqueParcours_idHistorique_Historique` FOREIGN KEY (`idHistorique_Historique`) REFERENCES `historique` (`idHistorique`);
+  ADD CONSTRAINT `FK_HistoriqueParcours_idHistorique_Historique` FOREIGN KEY (`idHistorique_Historique`) REFERENCES `historique` (`idHistorique`),
+  ADD CONSTRAINT `FK_HistoriqueParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`);
 
 --
 -- Contraintes pour la table `historiquepoint`
@@ -205,44 +267,37 @@ ALTER TABLE `historiquepoint`
   ADD CONSTRAINT `FK_HistoriquePoint_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`);
 
 --
+-- Contraintes pour la table `image`
+--
+ALTER TABLE `image`
+  ADD CONSTRAINT `FK_Image_idDescription_DescriptionComplete` FOREIGN KEY (`idDescription_DescriptionComplete`) REFERENCES `descriptioncomplete` (`idDescription`);
+
+--
 -- Contraintes pour la table `listepointparcours`
 --
 ALTER TABLE `listepointparcours`
-  ADD CONSTRAINT `FK_ListePointParcours_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`),
-  ADD CONSTRAINT `FK_ListePointParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`);
-
---
--- Contraintes pour la table `news`
---
-ALTER TABLE `news`
-  ADD CONSTRAINT `FK_News_idDescription_DescriptionComplete` FOREIGN KEY (`idDescription_DescriptionComplete`) REFERENCES `descriptioncomplete` (`idDescription`);
-
---
--- Contraintes pour la table `parcours`
---
-ALTER TABLE `parcours`
-  ADD CONSTRAINT `FK_Parcours_idDescription_DescriptionComplete` FOREIGN KEY (`idDescription_DescriptionComplete`) REFERENCES `descriptioncomplete` (`idDescription`);
+  ADD CONSTRAINT `FK_ListePointParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`),
+  ADD CONSTRAINT `FK_ListePointParcours_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`);
 
 --
 -- Contraintes pour la table `point`
 --
 ALTER TABLE `point`
-  ADD CONSTRAINT `FK_Point_idPoint1` FOREIGN KEY (`idPoint1`) REFERENCES `point` (`idPoint`),
-  ADD CONSTRAINT `FK_Point_idDescription_DescriptionComplete` FOREIGN KEY (`idDescription_DescriptionComplete`) REFERENCES `descriptioncomplete` (`idDescription`);
+  ADD CONSTRAINT `FK_Point_idPoint1` FOREIGN KEY (`idPoint1`) REFERENCES `point` (`idPoint`);
 
 --
 -- Contraintes pour la table `referenceparcours`
 --
 ALTER TABLE `referenceparcours`
-  ADD CONSTRAINT `FK_referenceParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`),
-  ADD CONSTRAINT `FK_referenceParcours_idNews_News` FOREIGN KEY (`idNews_News`) REFERENCES `news` (`idNews`);
+  ADD CONSTRAINT `FK_referenceParcours_idNews_News` FOREIGN KEY (`idNews_News`) REFERENCES `news` (`idNews`),
+  ADD CONSTRAINT `FK_referenceParcours_idParcour_Parcours` FOREIGN KEY (`idParcour_Parcours`) REFERENCES `parcours` (`idParcour`);
 
 --
 -- Contraintes pour la table `referencepoint`
 --
 ALTER TABLE `referencepoint`
-  ADD CONSTRAINT `FK_ReferencePoint_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`),
-  ADD CONSTRAINT `FK_ReferencePoint_idNews_News` FOREIGN KEY (`idNews_News`) REFERENCES `news` (`idNews`);
+  ADD CONSTRAINT `FK_ReferencePoint_idNews_News` FOREIGN KEY (`idNews_News`) REFERENCES `news` (`idNews`),
+  ADD CONSTRAINT `FK_ReferencePoint_idPoint_Point` FOREIGN KEY (`idPoint_Point`) REFERENCES `point` (`idPoint`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
