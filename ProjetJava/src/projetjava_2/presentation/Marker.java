@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Polygon;
+import projetjava_2.metier.IManager;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Marker{
     private Integer id;
     public Polygon triangle;
     public AnchorPane mapContainer;
+    
     
     public Marker(Integer id, AnchorPane mapcontainer, String libelle)
     {

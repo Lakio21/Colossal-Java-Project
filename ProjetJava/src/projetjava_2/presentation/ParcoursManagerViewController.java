@@ -82,6 +82,7 @@ public class ParcoursManagerViewController implements Initializable {
             @Override
             public void handle(ActionEvent event)
             {
+                
                //Fermeture de la fenetre
                Node  source = (Node) event.getSource();
                Stage stage  = (Stage) source.getScene().getWindow();
@@ -94,6 +95,7 @@ public class ParcoursManagerViewController implements Initializable {
             @Override
             public void handle(ActionEvent event)
             {
+                
                //Fermeture de la fenetre
                Node  source = (Node) event.getSource();
                Stage stage  = (Stage) source.getScene().getWindow();
@@ -118,7 +120,6 @@ public class ParcoursManagerViewController implements Initializable {
             btnSupprimerParcours.setDisable(true);
         if (isAdding == false)
             btnSupprimerParcours.setDisable(false);
-        
     }
     
 }

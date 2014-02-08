@@ -34,6 +34,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
+import projetjava_2.metier.IManager;
 
 /**
  * FXML Controller class
@@ -43,6 +44,7 @@ import javafx.scene.web.WebView;
 public class mainViewController implements Initializable {
     
     private Scene fenetre;
+    public IManager manager;
     
     @FXML
     private Button newsButton;
@@ -136,7 +138,7 @@ public class mainViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable,
                 String oldValue, String newValue) {
-        
+         
             } 
         });
         
@@ -144,7 +146,7 @@ public class mainViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable,
                 String oldValue, String newValue) {
-                
+               
             }
         });
         
@@ -153,7 +155,7 @@ public class mainViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable,
                 String oldValue, String newValue) {
-         
+       
             }
         });
         
@@ -162,7 +164,7 @@ public class mainViewController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable,
                 String oldValue, String newValue) {
-      
+     
             }
         });
         
@@ -205,7 +207,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(ActionEvent t) {
-               
+               manager.execute();
             }
         });
         
@@ -213,7 +215,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(ActionEvent t) {
-                
+                manager.execute();
             }
         });
         
@@ -221,7 +223,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(ActionEvent t) {
-                
+                manager.execute();
             }
         });
         
@@ -229,7 +231,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(ActionEvent t) {
-                
+                manager.execute();
             }
         });
         
@@ -237,7 +239,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(ActionEvent t) {
-                
+                manager.execute();
             }
         });
         
@@ -245,7 +247,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(ActionEvent t) {
-                
+                manager.execute();
             }
         });
         
@@ -253,7 +255,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(ActionEvent t) {
-                
+                manager.execute();
             }
         });
         
@@ -261,7 +263,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(ActionEvent t) {
-                
+                manager.execute();
             }
         });
         
@@ -269,7 +271,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(ActionEvent t) {
-              
+              manager.execute();
             }
         });
         
@@ -277,7 +279,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(ActionEvent t) {
-               
+               manager.execute();
             }
         });
         
@@ -285,7 +287,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(MouseEvent t) {
-                
+                manager.execute();
             }
             
         });
@@ -294,7 +296,7 @@ public class mainViewController implements Initializable {
 
             @Override
             public void handle(MouseEvent t) {
-                
+                manager.execute();
             }
             
         });
@@ -317,8 +319,6 @@ public class mainViewController implements Initializable {
                     add.constructor(1);
                     
                     Scene scene = new Scene(root);
-                    
-                    
                     
                     //fenetre.setScene(scene);
                     //fenetre.show()
