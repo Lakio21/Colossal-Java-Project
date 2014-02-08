@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="231.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="java_project.LieuManagerViewController">
+  <children>
+    <Pane layoutX="0.0" layoutY="-2.0" prefHeight="231.0" prefWidth="600.0">
+      <children>
+        <Label layoutX="113.0" layoutY="76.0" prefHeight="17.9609375" prefWidth="113.0" text="Libellé du point :" />
+        <Label layoutX="113.0" layoutY="106.0" prefHeight="17.9609375" prefWidth="113.0001220703125" text="Chemin vers l'image :" />
+        <TextField id="tbLibellePOI" fx:id="tbLibelleLieu" layoutX="231.0" layoutY="74.0" prefWidth="229.0" />
+        <TextField id="tbAdrImagePOI" fx:id="tbAdrImageLieu" layoutX="231.0" layoutY="104.0" prefWidth="229.0" />
+        <Label id="labelViewMode" fx:id="labelViewModeLieu" layoutX="230.0" layoutY="19.0" prefWidth="141.0" text="Ajout d'un lieu" textAlignment="RIGHT" underline="true" wrapText="false">
+          <font>
+            <Font name="Arial" size="19.0" />
+          </font>
+        </Label>
+        <Button id="btnAddPOI" fx:id="btnValiderLieu" layoutX="498.0" layoutY="193.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="88.0" text="Valider" />
+        <Button id="btnAddPOI" fx:id="btnSupprimerLieu" disable="true" layoutX="395.0" layoutY="193.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="88.0" text="Supprimer" />
+        <ComboBox fx:id="cbLieuParentLieu" layoutX="231.0" layoutY="139.0" prefHeight="21.0" prefWidth="229.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label layoutX="113.0" layoutY="142.0" prefWidth="113.0001220703125" text="Lieu parent :" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>
