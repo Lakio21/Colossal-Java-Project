@@ -25,7 +25,7 @@ public class ProjetJava_2 extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("presentation/mainView.fxml"));
         
         RequestController request = new RequestController();
-        MapManager map = MapManager.getInstance();
+        MapManager map = new MapManager(request);
         
         
         Scene scene = new Scene(root);

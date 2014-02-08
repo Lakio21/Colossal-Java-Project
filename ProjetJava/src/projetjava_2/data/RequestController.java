@@ -15,9 +15,9 @@ import projetjava_2.metier.MapManager;
  * @author Pierre
  */
 public class RequestController implements IRequest{
-    /*private static RequestController instance;
+    private static RequestController instance;
     
-    public static RequestController getInstance() {
+    /*public static RequestController getInstance() {
         if (null == instance) {
             instance = new RequestController();
         }
@@ -26,7 +26,13 @@ public class RequestController implements IRequest{
     
     private RequestController() {
     }*/
-    
+    @Override
+    public RequestController getInstance() {
+        if (null == instance) {
+            instance = new RequestController();
+        }
+        return instance;
+    }
     
     @Override
     public ArrayList<HashMap<String, Object>> executeRequest(String requestType, ArrayList<String> values, ArrayList<Boolean> fieldsTested, String Table) {

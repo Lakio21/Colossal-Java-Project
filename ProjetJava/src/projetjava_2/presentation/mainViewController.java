@@ -320,8 +320,8 @@ public class mainViewController implements Initializable {
                     
                     
                     
-                    fenetre.setScene(scene);
-                    fenetre.show()
+                    //fenetre.setScene(scene);
+                    //fenetre.show()
                             } catch (IOException ex) {
                     Logger.getLogger(mainViewController.class.getName()).log(Level.SEVERE, null, ex);
                 }

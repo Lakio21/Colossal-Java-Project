@@ -15,4 +15,5 @@ import java.util.HashMap;
  */
 public interface IRequest {
     public ArrayList<HashMap<String, Object>> executeRequest(String requestType, ArrayList<String> values, ArrayList<Boolean> fieldsTested, String Table);
+    public IRequest getInstance();
 }

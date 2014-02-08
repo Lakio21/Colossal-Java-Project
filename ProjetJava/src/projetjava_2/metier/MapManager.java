@@ -16,16 +16,19 @@ import projetjava_2.data.IRequest;
  */
 public class MapManager implements IManager{
     
+    private IRequest request;
+    
     private static MapManager instance;
     
-    public static MapManager getInstance() {
+    /*public static MapManager getInstance() {
         if (null == instance) {
             instance = new MapManager();
         }
         return instance;
-    }
+    }*/
     
-    private MapManager() {
+    public MapManager(IRequest request) {
+        this.request = request;
     }
     
     @Override
@@ -36,9 +39,10 @@ public class MapManager implements IManager{
     
     public ArrayList<HashMap<String, Object>> execute(Double mapContainerHeight, Double mapContainerWidth, Double mapCenterX, Double mapCenterY) {
         
-        IRequest request; 
-        request.executeRequest(null, null, null, null);
-        
+        //String requestType, ArrayList<String> values, ArrayList<Boolean> fieldsTested, String Table
+        request.getInstance().executeRequest("select", null, null, null);
+        //Class.forName(request.getClass().getName());
+        //System.out.println(request.getClass().getName());
         return new ArrayList<HashMap<String, Object>>();
     }
     
