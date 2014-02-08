@@ -8,6 +8,8 @@ package projetjava_2.presentation;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -22,6 +24,7 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
 
@@ -117,6 +120,42 @@ public class mainViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        poiTextfield.textProperty().addListener(new ChangeListener<String>() {
+                
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                String oldValue, String newValue) {
+        
+            } 
+        });
+        
+        parcoursTextfield.textProperty().addListener(new ChangeListener<String>(){
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                String oldValue, String newValue) {
+                
+            }
+        });
+        
+        parcoursPoiTextfield.textProperty().addListener(new ChangeListener<String>() {
+                
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                String oldValue, String newValue) {
+         
+            }
+        });
+        
+        lieuTextfield.textProperty().addListener(new ChangeListener<String>() {
+                
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                String oldValue, String newValue) {
+      
+            }
+        });
+        
         newsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -150,6 +189,104 @@ public class mainViewController implements Initializable {
                     addLieu.setDisable(true);
                 }
             }
+        });
+        
+        poiNameRadio.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+               
+            }
+        });
+        
+        poiDescriptionRadio.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                
+            }
+        });
+        
+        parcoursNameRadio.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                
+            }
+        });
+        
+        parcoursDescriptionRadio.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                
+            }
+        });
+        
+        parcoursPoiRadio.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                
+            }
+        });
+        
+        lieuNameRadio.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                
+            }
+        });
+        
+        lieuDescriptionRadio.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                
+            }
+        });
+        
+        backwardButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                
+            }
+        });
+        
+        forwardButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+              
+            }
+        });
+        
+        historiqueComboBox.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+               
+            }
+        });
+        
+        mapImage.setOnMousePressed(new EventHandler<MouseEvent>(){
+
+            @Override
+            public void handle(MouseEvent t) {
+                
+            }
+            
+        });
+        
+        mapImage.setOnMouseReleased(new EventHandler<MouseEvent>(){
+
+            @Override
+            public void handle(MouseEvent t) {
+                
+            }
+            
         });
     }    
     
