@@ -2166,108 +2166,170 @@
             </attributes>
             <operations>
               <operation id="of8c4dba78306472d8957c861dd1ff7b1756" name="poiTextfield.textProperty().addListener" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o00c0f31839654490b9e5aa98db228db5606" name="parcoursTextfield.textProperty().addListener" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o62ba4bbdfec1419caed9093ceba95ba5241" name="parcoursPoiTextField.textProperty().addListener" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="oc2fbcdb9a7544ab5b73b70e1b9312aa5582" name="lieuTextfield.textProperty().addListener" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="oc9a6d61650234288a6d81aec3fa8dcfc807" name="poiNameRadio.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="of275ab6ac34047b2a6362ab7e90932a1777" name="poiDescriptionRadio.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o01b9db19e4b24c8ea0e0fbf86d87ceba201" name="parcoursNameRadio.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="oc0e5b22e56b84f0d884728892382a156591" name="parcoursDescriptionRadio.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o789d20f2ef284223ab6a72669be00781619" name="parcoursPoiRadio.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="ob20b71b95b284f46ad460d385e5c7cef979" name="lieuNameRadio.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o8a6dad78e44949fc9ea1042dc1bb143a641" name="lieuDescriptionRadio.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="oc70a64e9b62e434a9db68adb31b8dd22793" name="mapImage.setOnMousePressed" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o364b7385fc3b49f1839643b37a667366818" name="mapImage.setOnMouseReleased" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="of0df2df9bb584f43ad2e2fdddfc0f93251" name="markerBuilder" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="ob46e423eb46c4faa9bae0fef6969aa50471" name="backwardButton.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o122387dd8467407eb249471cf1941fc7564" name="forwardButton.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o5565b4e57b45423cb29b8c8d5116f12073" name="historiqueComboBox.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o0c71bee3ee984dd69b4affb61e42d14f332" name="newsButton.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o07d9fb879485473eb34928147011f9e8914" name="consultButton.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
               <operation id="o63a40bf86823480eb8f6f3351fac780d448" name="editButton.setOnAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <stereotypes>
+                  <stereotype>Event</stereotype>
+                </stereotypes>
                 <source-codes>
                   <source-code language="ActionScript" />
                 </source-codes>
               </operation>
             </operations>
             <template-parameters>
-              <source-codes />
+              <source-codes>
+                <source-code language="ActionScript" />
+              </source-codes>
             </template-parameters>
           </item>
           <item id="di771068335665567379" cid="CMT003" type="comment" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="02/07/2014 09:16:42">
@@ -3724,7 +3786,7 @@
             <class />
           </item>
           <item id="di488638410791103161" iid="760e72af283d47f1b07ec2cc644ed35e" creation-date="02/04/2014 16:01:07" order-index="1" type="entity">
-            <layout ax="-200" ay="-1560" awidth="2030" aheight="1810" x="-200" y="-1560" width="2030" height="1810" angle="0" />
+            <layout ax="-200" ay="-1560" awidth="2100" aheight="1810" x="-200" y="-1560" width="2100" height="1810" angle="0" />
           </item>
           <item id="di832103597881402566" iid="c8c3616a309c4939ab5658ba08d80c00" container="di488638410791103161" container-iid="760e72af283d47f1b07ec2cc644ed35e" creation-date="02/04/2014 16:01:16" order-index="2" type="entity">
             <layout ax="-90" ay="-1230" awidth="450" aheight="520" x="-90" y="-1230" width="450" height="520" angle="0" />
@@ -3733,7 +3795,7 @@
             <layout ax="-110" ay="-690" awidth="430" aheight="580" x="-110" y="-690" width="430" height="580" angle="0" />
           </item>
           <item id="di538415580186160659" iid="6a787a1cfa144c74bb0a891c48051b01" container="di488638410791103161" container-iid="760e72af283d47f1b07ec2cc644ed35e" creation-date="02/04/2014 16:01:19" order-index="3" type="entity">
-            <layout ax="380" ay="-1560" awidth="1420" aheight="1750" x="380" y="-1560" width="1420" height="1750" angle="0" />
+            <layout ax="380" ay="-1560" awidth="1480" aheight="1750" x="380" y="-1560" width="1480" height="1750" angle="0" />
           </item>
           <item id="di523282769636856163" iid="121f63f1de7144de967d34569702731a" container="di832103597881402566" container-iid="c8c3616a309c4939ab5658ba08d80c00" creation-date="02/04/2014 16:01:31" order-index="5" type="entity">
             <layout ax="100" ay="-1150" awidth="197" aheight="50" x="100" y="-1150" width="197" height="50" angle="0" />
@@ -3743,7 +3805,7 @@
             <class />
           </item>
           <item id="di710107248972321401" iid="7cd9ba0cb56f451cbc627df6777e059d" container="di538415580186160659" container-iid="6a787a1cfa144c74bb0a891c48051b01" creation-date="02/04/2014 16:34:03" order-index="9" type="entity">
-            <layout ax="1260" ay="-1310" awidth="500" aheight="500" x="1260" y="-1310" width="500" height="500" angle="0" />
+            <layout ax="1260" ay="-1310" awidth="580" aheight="580" x="1260" y="-1310" width="580" height="580" angle="0" />
             <class />
           </item>
           <item id="di581197266454342019" iid="811a169f258342f5a4537a106c616f97" container="di251009242216224974" container-iid="397916326e154776a79a3d07be14c6d0" creation-date="02/06/2014 13:30:10" order-index="12" type="entity">
@@ -3781,20 +3843,20 @@
             <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
           </item>
           <item id="di193253131625691051" iid="3f952178e4d644bab288dc5e1a9e0672" creation-date="02/07/2014 09:08:11" order-index="38" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1260" y1="-962" x2="300" y2="-586" start-border-pos="0.826075256347656" end-border-pos="0.25434793561897">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1260" y1="-918" x2="300" y2="-579" start-border-pos="0.830923356681034" end-border-pos="0.266386812965342">
               <points>
-                <point x="1260" y="-962" />
-                <point x="300" y="-586" />
+                <point x="1260" y="-918" />
+                <point x="300" y="-579" />
               </points>
             </layout>
             <relation from="di710107248972321401" from-iid="7cd9ba0cb56f451cbc627df6777e059d" to="di327422374313039053" to-iid="15f46fe35cd64f73b7ca0d89d4261105" />
             <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
           </item>
           <item id="di695213126786508247" iid="84e02fa877c748d0b4ab11600c8cf7ea" creation-date="02/07/2014 09:10:00" order-index="42" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1260" y1="-924" x2="240" y2="-369" start-border-pos="0.806978790283203" end-border-pos="0.276369247436523">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1260" y1="-875" x2="240" y2="-363" start-border-pos="0.812285219389817" end-border-pos="0.284063568115234">
               <points>
-                <point x="1260" y="-924" />
-                <point x="240" y="-369" />
+                <point x="1260" y="-875" />
+                <point x="240" y="-363" />
               </points>
             </layout>
             <relation from="di710107248972321401" from-iid="7cd9ba0cb56f451cbc627df6777e059d" to="di581197266454342019" to-iid="811a169f258342f5a4537a106c616f97" />
@@ -3822,10 +3884,10 @@
             <class />
           </item>
           <item id="di977520912152333665" iid="0546f1438e6c4f859f14eb4344d12c96" creation-date="02/07/2014 09:19:43" order-index="50" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="297" y1="-1120" x2="1260" y2="-1072" start-border-pos="0.39952392578125" end-border-pos="0.881192810058594">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="297" y1="-1117" x2="1260" y2="-1043" start-border-pos="0.413442993164063" end-border-pos="0.884707852067619">
               <points>
-                <point x="297" y="-1120" />
-                <point x="1260" y="-1072" />
+                <point x="297" y="-1117" />
+                <point x="1260" y="-1043" />
               </points>
             </layout>
             <relation from="di523282769636856163" from-iid="121f63f1de7144de967d34569702731a" to="di710107248972321401" to-iid="7cd9ba0cb56f451cbc627df6777e059d" />
@@ -3858,10 +3920,10 @@
             <relation from="di838242211458498520" from-iid="36c0eb094dae43e38c1f6d147957a58a" to="di345747609753478137" to-iid="584249c6076f4c19b35c5a4e13a7ece0" />
           </item>
           <item id="di214052867828154444" iid="a4fe7bd3034842f191724f5d691da1fb" creation-date="02/07/2014 11:28:14" order-index="66" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1760" y1="-951" x2="1950" y2="-868" start-border-pos="0.429621856689453" end-border-pos="0.945553207397461">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1840" y1="-905" x2="1950" y2="-861" start-border-pos="0.424549550023572" end-border-pos="0.939001528422038">
               <points>
-                <point x="1760" y="-951" />
-                <point x="1950" y="-868" />
+                <point x="1840" y="-905" />
+                <point x="1950" y="-861" />
               </points>
             </layout>
             <relation from="di710107248972321401" from-iid="7cd9ba0cb56f451cbc627df6777e059d" to="di824908132223143299" to-iid="05226c8476af4134af7d068ffe3466ca" />
@@ -3979,39 +4041,39 @@
             <class />
           </item>
           <item id="di219701189873178552" iid="49751d04043c4ed8b098b37af1eb5b25" creation-date="02/07/2014 15:51:05" order-index="91" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1220" y1="-1039" x2="1260" y2="-1042" start-border-pos="0.302158203125" end-border-pos="0.866007202148438">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1220" y1="-1016" x2="1260" y2="-1016" start-border-pos="0.361224517822266" end-border-pos="0.873299329034213">
               <points>
-                <point x="1220" y="-1039" />
-                <point x="1260" y="-1042" />
+                <point x="1220" y="-1016" />
+                <point x="1260" y="-1016" />
               </points>
             </layout>
             <relation from="di877612604739112730" from-iid="94f38026046c4588bd6317c7238c2cfd" to="di710107248972321401" to-iid="7cd9ba0cb56f451cbc627df6777e059d" />
           </item>
           <item id="di896036519469650730" iid="dccbb7572fc24181887269a7aa9fc4d8" creation-date="02/07/2014 16:16:35" order-index="93" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1404" y1="-810" x2="1340" y2="-660" start-border-pos="0.6780302734375" end-border-pos="0.154634543026195">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1391" y1="-730" x2="1352" y2="-660" start-border-pos="0.693681335449219" end-border-pos="0.163380701401654">
               <points>
-                <point x="1404" y="-810" />
-                <point x="1340" y="-660" />
+                <point x="1391" y="-730" />
+                <point x="1352" y="-660" />
               </points>
             </layout>
             <relation from="di710107248972321401" from-iid="7cd9ba0cb56f451cbc627df6777e059d" to="di200002340836756557" to-iid="92c286a8b3c34df3b4a86c1ae23f4d49" />
             <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
           </item>
           <item id="di287852999428343194" iid="4edb26d66aeb4a789954960f188f3df4" creation-date="02/07/2014 16:39:52" order-index="94" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1523" y1="-810" x2="1548" y2="-330" start-border-pos="0.618459289550781" end-border-pos="0.120403805294552">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1552" y1="-730" x2="1554" y2="-330" start-border-pos="0.624237797178071" end-border-pos="0.124464375263936">
               <points>
-                <point x="1523" y="-810" />
-                <point x="1548" y="-330" />
+                <point x="1552" y="-730" />
+                <point x="1554" y="-330" />
               </points>
             </layout>
             <relation from="di710107248972321401" from-iid="7cd9ba0cb56f451cbc627df6777e059d" to="di328824749478441302" to-iid="386c27ec483e40018e945e9f322e728c" />
             <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
           </item>
           <item id="di708895800336937938" iid="f58869597b0b4efd9d6adea3b12407bc" creation-date="02/07/2014 16:39:55" order-index="95" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1260" y1="-830" x2="815" y2="-420" start-border-pos="0.759848480224609" end-border-pos="0.213015664590372">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1260" y1="-779" x2="829" y2="-420" start-border-pos="0.77095376376448" end-border-pos="0.222409923656567">
               <points>
-                <point x="1260" y="-830" />
-                <point x="815" y="-420" />
+                <point x="1260" y="-779" />
+                <point x="829" y="-420" />
               </points>
             </layout>
             <relation from="di710107248972321401" from-iid="7cd9ba0cb56f451cbc627df6777e059d" to="di345747609753478137" to-iid="584249c6076f4c19b35c5a4e13a7ece0" />
@@ -4022,10 +4084,10 @@
             <class />
           </item>
           <item id="di396112784305114273" iid="13d94a5b84644fafb7080dee383e8a0a" creation-date="02/07/2014 22:38:51" order-index="97" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1260" y1="-1146" x2="830" y2="-1294" start-border-pos="0.91796875" end-border-pos="0.46875">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" auto-path="" x1="1260" y1="-1129" x2="830" y2="-1290" start-border-pos="0.921875" end-border-pos="0.477272727272727">
               <points>
-                <point x="1260" y="-1146" />
-                <point x="830" y="-1294" />
+                <point x="1260" y="-1129" />
+                <point x="830" y="-1290" />
               </points>
             </layout>
             <relation from="di710107248972321401" from-iid="7cd9ba0cb56f451cbc627df6777e059d" to="di917287342319683923" to-iid="dae5e59954d04888a1da97f156174965" />
