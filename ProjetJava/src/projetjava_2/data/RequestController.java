@@ -8,7 +8,6 @@ package projetjava_2.data;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import projetjava_2.metier.MapManager;
 
 /**
  *
@@ -17,17 +16,10 @@ import projetjava_2.metier.MapManager;
 public class RequestController implements IRequest{
     private static RequestController instance;
     
-    /*public static RequestController getInstance() {
-        if (null == instance) {
-            instance = new RequestController();
-        }
-        return instance;
-    }
     
-    private RequestController() {
-    }*/
+    
     @Override
-    public RequestController getInstance() {
+    public RequestController getInstance() { 
         if (null == instance) {
             instance = new RequestController();
         }

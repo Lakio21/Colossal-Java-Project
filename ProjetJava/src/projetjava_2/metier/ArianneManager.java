@@ -13,9 +13,9 @@ import java.util.HashMap;
  *
  * @author Pierre
  */
-public class ArianneManager implements IManager{
-    @Override
+public class ArianneManager{
+    /*@Override
     public ArrayList<HashMap<String, Object>> execute() {
         return null;
-    }
+    }*/
 }

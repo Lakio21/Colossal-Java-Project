@@ -20,12 +20,11 @@ public class MapManager implements IManager{
     
     private static MapManager instance;
     
-    /*public static MapManager getInstance() {
-        if (null == instance) {
-            instance = new MapManager();
-        }
+    @Override
+    public MapManager getInstance() {
+        
         return instance;
-    }*/
+    }
     
     public MapManager(IRequest request) {
         this.request = request;
@@ -36,14 +35,23 @@ public class MapManager implements IManager{
         return null;
     }
     
-    
+    @Override
     public ArrayList<HashMap<String, Object>> execute(Double mapContainerHeight, Double mapContainerWidth, Double mapCenterX, Double mapCenterY) {
         
         //String requestType, ArrayList<String> values, ArrayList<Boolean> fieldsTested, String Table
         request.getInstance().executeRequest("select", null, null, null);
         //Class.forName(request.getClass().getName());
         //System.out.println(request.getClass().getName());
-        return new ArrayList<HashMap<String, Object>>();
+        ArrayList<HashMap<String, Object>> temp_Array = new ArrayList<>();
+        
+        HashMap<String, Object> temp_map = new HashMap<>();
+        temp_map.put("id", "test");
+        temp_map.put("libelle", "testLib");
+        Integer[] array = new Integer[] { 1};
+        temp_map.put("x", array[0]);
+        
+        temp_Array.add(0, temp_map);
+        return temp_Array;
     }
     
     public ArrayList<HashMap<String, Object>> execute(Double mapContainerHeight, Double mapContainerWidth) {

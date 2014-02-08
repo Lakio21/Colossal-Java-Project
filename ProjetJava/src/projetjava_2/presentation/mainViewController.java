@@ -8,6 +8,8 @@ package projetjava_2.presentation;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,6 +36,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+import projetjava_2.data.IRequest;
+import projetjava_2.data.RequestController;
+import projetjava_2.metier.IManager;
+import projetjava_2.metier.MapManager;
 
 /**
  * FXML Controller class
@@ -42,7 +49,14 @@ import javafx.scene.web.WebView;
  */
 public class mainViewController implements Initializable {
     
-    private Scene fenetre;
+    private IManager map;
+    
+    
+    public void constructor(IManager map) {
+        this.map = map;
+    }
+    
+    private Stage fenetre;
     
     @FXML
     private Button newsButton;
@@ -131,6 +145,10 @@ public class mainViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+        
+        
+        
+        
         poiTextfield.textProperty().addListener(new ChangeListener<String>() {
                 
             @Override
@@ -171,6 +189,12 @@ public class mainViewController implements Initializable {
             public void handle(ActionEvent event) {
                 newsSplitPanel.setVisible(true);
                 mainAccordion.setVisible(false);
+                
+                System.out.println(map.getClass().toString());
+                ArrayList<HashMap<String, Object>> temp_arrayList = (ArrayList<HashMap<String, Object>>)(map.getClass().cast(map)).execute(null,null,null,null).clone();
+                
+                System.out.println(temp_arrayList.get(0).get("id").toString());
+                //((map.getClass())map).getInstance().execute(null, null, null, null);
             }
         });
         
@@ -320,8 +344,8 @@ public class mainViewController implements Initializable {
                     
                     
                     
-                    //fenetre.setScene(scene);
-                    //fenetre.show()
+                    fenetre.setScene(scene);
+                    fenetre.show();
                             } catch (IOException ex) {
                     Logger.getLogger(mainViewController.class.getName()).log(Level.SEVERE, null, ex);
                 }

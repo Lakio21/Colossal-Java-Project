@@ -15,4 +15,6 @@ import java.util.HashMap;
  */
 public interface IManager {
     public ArrayList<HashMap<String, Object>> execute();
+    public ArrayList<HashMap<String, Object>> execute(Double mapContainerHeight, Double mapContainerWidth, Double mapCenterX, Double mapCenterY);
+    public IManager getInstance();
 }
