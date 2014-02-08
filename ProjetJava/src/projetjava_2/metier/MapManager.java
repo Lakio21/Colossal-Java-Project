@@ -36,8 +36,8 @@ public class MapManager implements IManager{
     
     public ArrayList<HashMap<String, Object>> execute(Double mapContainerHeight, Double mapContainerWidth, Double mapCenterX, Double mapCenterY) {
         
-        
-        
+        IRequest request; 
+        request.executeRequest(null, null, null, null);
         
         return new ArrayList<HashMap<String, Object>>();
     }

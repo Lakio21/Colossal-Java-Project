@@ -11,6 +11,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import projetjava_2.data.RequestController;
+import projetjava_2.metier.MapManager;
 
 /**
  *
@@ -21,6 +23,10 @@ public class ProjetJava_2 extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("presentation/mainView.fxml"));
+        
+        RequestController request = new RequestController();
+        MapManager map = MapManager.getInstance();
+        
         
         Scene scene = new Scene(root);
         
