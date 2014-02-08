@@ -6,14 +6,21 @@
 
 package projetjava_2.presentation;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.fxml.JavaFXBuilderFactory;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -34,6 +41,9 @@ import javafx.scene.web.WebView;
  * @author Pierre
  */
 public class mainViewController implements Initializable {
+    
+    private Scene fenetre;
+    
     @FXML
     private Button newsButton;
     @FXML
@@ -288,6 +298,35 @@ public class mainViewController implements Initializable {
             }
             
         });
-    }    
+        
+        addPoi.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent t) {
+                try {
+                    FXMLLoader load = new FXMLLoader();
+                    
+                    URL location = getClass().getResource("PoiManagerView.fxml");
+                    
+                    load.setLocation(location);
+                    load.setBuilderFactory(new JavaFXBuilderFactory());
+                    
+                    Parent root = (Parent) load.load(location.openStream());
+                    
+                    PoiManagerViewController add = load.getController();
+                    add.constructor(1);
+                    
+                    Scene scene = new Scene(root);
+                    
+                    
+                    
+                    fenetre.setScene(scene);
+                    fenetre.show()
+                            } catch (IOException ex) {
+                    Logger.getLogger(mainViewController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+    }
     
 }

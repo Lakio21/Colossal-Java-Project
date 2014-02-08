@@ -8,6 +8,8 @@ package projetjava_2.presentation;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -98,10 +100,24 @@ public class ParcoursManagerViewController implements Initializable {
                stage.close();
             }
         }); 
+        
+        tbRecherchePoiParcours.textProperty().addListener(new ChangeListener<String>(){
+
+            @Override
+            public void changed(ObservableValue<? extends String> ov, String t, String t1) {
+                
+            }
+        });
     }
     
-    public void constructor()
+    
+    
+    public void constructor(boolean isAdding)
     {
+        if (isAdding == true)
+            btnSupprimerParcours.setDisable(true);
+        if (isAdding == false)
+            btnSupprimerParcours.setDisable(false);
         
     }
     
