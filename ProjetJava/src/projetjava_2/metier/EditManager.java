@@ -6,10 +6,16 @@
 
 package projetjava_2.metier;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  *
  * @author Pierre
  */
 public class EditManager implements IManager{
-    
+    @Override
+    public ArrayList<HashMap<String, Object>> execute() {
+        return null;
+    }
 }

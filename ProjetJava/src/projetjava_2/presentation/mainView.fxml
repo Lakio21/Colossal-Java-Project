@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1379.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="projetjava_2.presentation.mainViewController">
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1379.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetjava_2.presentation.mainViewController">
     <children><MenuBar maxHeight="25.0" prefHeight="25.0" prefWidth="1243.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">
   <menus>
     <Menu mnemonicParsing="false" text="File">
@@ -55,7 +55,7 @@
   <content>
     <AnchorPane fx:id="listeNews" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
   </content>
-</ScrollPane><Button disable="true" layoutX="81.734375" layoutY="462.0" mnemonicParsing="false" text="Ajouter une News" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+</ScrollPane><Button fx:id="addNews" disable="true" layoutX="81.734375" layoutY="462.0" mnemonicParsing="false" text="Ajouter une News" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
 </children></AnchorPane>
   </items>
 </SplitPane><Accordion fx:id="mainAccordion" disable="true" prefWidth="300.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml">

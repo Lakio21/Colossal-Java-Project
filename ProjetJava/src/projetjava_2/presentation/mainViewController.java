@@ -8,6 +8,8 @@ package projetjava_2.presentation;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
@@ -41,6 +43,8 @@ public class mainViewController implements Initializable {
     private ToggleButton editButton;
     @FXML
     private SplitPane newsSplitPanel;
+    @FXML
+    private Button addNews;
     @FXML
     private Accordion mainAccordion;
     @FXML
@@ -113,7 +117,40 @@ public class mainViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        newsButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                newsSplitPanel.setVisible(true);
+                mainAccordion.setVisible(false);
+            }
+        });
+        
+        consultButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                newsSplitPanel.setVisible(false);
+                mainAccordion.setVisible(true);
+                mainAccordion.setDisable(false);
+            }
+        });
+        
+        editButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if(editButton.isSelected()) {
+                    addPoi.setDisable(false);
+                    addParcours.setDisable(false);
+                    addNews.setDisable(false);
+                    addLieu.setDisable(false);
+                }
+                else {
+                    addPoi.setDisable(true);
+                    addParcours.setDisable(true);
+                    addNews.setDisable(true);
+                    addLieu.setDisable(true);
+                }
+            }
+        });
     }    
     
 }
