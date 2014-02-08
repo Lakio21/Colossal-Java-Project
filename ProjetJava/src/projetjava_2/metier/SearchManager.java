@@ -13,9 +13,9 @@ import java.util.HashMap;
  *
  * @author Pierre
  */
-public class SearchManager implements IManager{
-    @Override
+public class SearchManager{
+    /*@Override
     public ArrayList<HashMap<String, Object>> execute() {
         return null;
-    }
+    }*/
 }

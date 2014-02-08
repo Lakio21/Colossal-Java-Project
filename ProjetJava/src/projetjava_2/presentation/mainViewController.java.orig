@@ -36,11 +36,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
+<<<<<<< HEAD
+import projetjava_2.metier.IManager;
+=======
 import javafx.stage.Stage;
 import projetjava_2.data.IRequest;
 import projetjava_2.data.RequestController;
 import projetjava_2.metier.IManager;
 import projetjava_2.metier.MapManager;
+>>>>>>> bf85a7b7791e46b4a67c118e8e4af64204e1bf2c
 
 /**
  * FXML Controller class
@@ -49,8 +53,11 @@ import projetjava_2.metier.MapManager;
  */
 public class mainViewController implements Initializable {
     
-    private IManager map;
+<<<<<<< HEAD
+    private Scene fenetre;
     public IManager manager;
+=======
+    private IManager map;
     
     
     public void constructor(IManager map) {
@@ -58,6 +65,7 @@ public class mainViewController implements Initializable {
     }
     
     private Stage fenetre;
+>>>>>>> bf85a7b7791e46b4a67c118e8e4af64204e1bf2c
     
     @FXML
     private Button newsButton;
@@ -343,8 +351,15 @@ public class mainViewController implements Initializable {
                     
                     Scene scene = new Scene(root);
                     
+<<<<<<< HEAD
+                    //fenetre.setScene(scene);
+                    //fenetre.show()
+=======
+                    
+                    
                     fenetre.setScene(scene);
                     fenetre.show();
+>>>>>>> bf85a7b7791e46b4a67c118e8e4af64204e1bf2c
                             } catch (IOException ex) {
                     Logger.getLogger(mainViewController.class.getName()).log(Level.SEVERE, null, ex);
                 }

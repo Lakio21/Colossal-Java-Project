@@ -13,9 +13,9 @@ import java.util.HashMap;
  *
  * @author Pierre
  */
-public class EditManager implements IManager{
-    @Override
+public class EditManager{
+    /*@Override
     public ArrayList<HashMap<String, Object>> execute() {
         return null;
-    }
+    }*/
 }
