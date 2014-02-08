@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package java_project;
+package projetjava_2.presentation;
 
 import java.io.IOException;
 import java.net.URL;

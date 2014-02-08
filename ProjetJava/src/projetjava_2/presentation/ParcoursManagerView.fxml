@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="721.0" prefWidth="735.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="java_project.ParcoursManagerViewController">
+<AnchorPane id="AnchorPane" prefHeight="721.0" prefWidth="735.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="projetjava_2.presentation.ParcoursManagerViewController">
   <children>
     <TextArea id="taDescrpitionPOI" fx:id="taDescriptionParcours" layoutX="150.0" layoutY="124.0" prefHeight="101.0" prefWidth="571.0" wrapText="true" />
     <TextField id="tbLibellePOI" fx:id="tbLienParcours1" layoutX="150.0" layoutY="237.0" prefWidth="571.0" />
